@@ -1,0 +1,26 @@
+{% set name = "cgns" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  fn: v{{ version }}.tar.gz
+  url: https://github.com/CGNS/CGNS/archive/v{{ version }}.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - gcc
+    - zlib
+    - hdf5
+    - tk
+    - cmake
+  run:
+    - libgcc
+    - libgfortran
+    - zlib
+    - hdf5
+    - tk
